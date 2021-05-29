@@ -27,6 +27,9 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
     Option(in.last)
   }
 
+  /** Converti la Queue en liste simplement chaînée */
+  def toList: List[T] = in ::: out.reverse
+
   /** Vrai si la liste est vide. */
   def isEmpty:Boolean = in.isEmpty && out.isEmpty
 

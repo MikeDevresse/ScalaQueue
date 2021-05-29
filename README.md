@@ -54,3 +54,6 @@ Retourne la somme de la longueur de la liste in et la longueur de la liste out
 
 ## 3. Implantez une méthode rearOption qui retourne le dernier élément de la queue (celui inséré en premier) sans la modifier.
 Similaire à headOption, juste inversé
+
+## 4. Implantez une méthode toList qui convertit la Queue en liste simplement chaînée.
+On retourne la liste in concaténée à la liste out mais inversé

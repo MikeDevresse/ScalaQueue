@@ -33,5 +33,6 @@ object Test {
     println("Queue: " + q.rearOption())
     println("Taille: " + q.length)
     println("Contenu: " + q)
+    println("En list: " + q.toList)
   }
 }
