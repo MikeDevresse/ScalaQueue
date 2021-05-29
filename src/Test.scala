@@ -4,6 +4,11 @@ object Test {
     println("\n** QUEUE1 **")
     printQueue(queue1)
 
+    println("\n** TEST DEQUEUE VIDE **")
+    val dequeue1 = queue1.dequeue()
+    println("Dequeue: " + dequeue1._1)
+    printQueue(dequeue1._2)
+
     val queue2 = queue1.enqueue(1)
     println("\n** QUEUE2 **")
     printQueue(queue2)

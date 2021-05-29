@@ -6,11 +6,12 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
   }
 
   /** Retire le dernier élément. */
-  def dequeue():(T,Queue[T]) = out match {
+  def dequeue():(Option[T],Queue[T]) = out match {
+    case Nil if isEmpty => (Option.empty, Queue[T](Nil,Nil))
     case Nil =>
       val head :: tail = in.reverse
-      (head,Queue[T](Nil, tail))
-    case x :: xs => (x, Queue[T](in, xs))
+      (Option(head),Queue[T](Nil, tail))
+    case x :: xs => (Option(x), Queue[T](in, xs))
   }
 
   /** Accès au premier élément, s'il existe (dernier élément entré). */
