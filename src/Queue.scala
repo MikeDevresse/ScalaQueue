@@ -27,6 +27,11 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
     Option(in.last)
   }
 
+  /** Retourne une queue d'un nouvel élément convertie grâce à une méthode passé en paramètre */
+  def map[T2](f: T => T2): Queue[T2] = {
+    Queue(in.map(f), out.map(f))
+  }
+
   /** Converti la Queue en liste simplement chaînée */
   def toList: List[T] = in ::: out.reverse
 

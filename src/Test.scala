@@ -21,6 +21,10 @@ object Test {
     println("Dequeue: " + dequeue5._1)
     printQueue(dequeue5._2)
 
+    /** Ajoute 1 à chaque élément de notre liste */
+    println("\n** QUEUE6 **")
+    val queue6 = dequeue5._2.map(y => y + 1)
+    printQueue(queue6)
   }
 
   def printQueue(q: Queue[Int]): Unit = {

@@ -57,3 +57,6 @@ Similaire à headOption, juste inversé
 
 ## 4. Implantez une méthode toList qui convertit la Queue en liste simplement chaînée.
 On retourne la liste in concaténée à la liste out mais inversé
+
+## 5. Implantez une méthode map sur Queue.
+On cré une nouvelle queue en passant in que l'on map grâce à la méthode map de la classe List et on fait pareil pour la liste out.  
