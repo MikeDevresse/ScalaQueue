@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 /** Une classe liste FIFO. */
 case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
   /** Ajoute un élément `x` en tête. */
@@ -31,6 +33,12 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
   /** Retourne une queue d'un nouvel élément convertie grâce à une méthode passé en paramètre */
   def map[T2](f: T => T2): Queue[T2] = {
     Queue(in.map(f), out.map(f))
+  }
+
+  def foldLeft[T2](const: T2)(f: (T2, T) => T2): T2 = {
+    out.foldRight(
+      in.foldLeft(const)(f)
+    )((a, b) => f(b, a))
   }
 
   /** Converti la Queue en liste simplement chaînée */

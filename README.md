@@ -61,5 +61,8 @@ On retourne la liste in concaténée à la liste out mais inversé
 ## 5. Implantez une méthode map sur Queue.
 On cré une nouvelle queue en passant in que l'on map grâce à la méthode map de la classe List et on fait pareil pour la liste out.
 
+## 6. Implantez une méthode foldLeft sur Queue.
+Pour cette méthode j'ai utilisé les méthodes foldLeft et foldRight de la classe List de Scala. On fait un foldLeft sur la liste in, que l'on passe en paramètre du foldRight de la liste out. On utilise un foldRight sur la liste out car la liste est inversé.
+
 ## 7. La méthode dequeue est partielle. Corrigez-la.
 On retourne un Option[T] au lieu d'un [T] ce qui nous permet aussi de traité le cas ou la queue est vide

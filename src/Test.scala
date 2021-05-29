@@ -30,6 +30,11 @@ object Test {
     println("\n** QUEUE6 **")
     val queue6 = dequeue5._2.map(y => y + 1)
     printQueue(queue6)
+
+    /** Addition de l'ensemble  */
+    println("\n** FOLD LEFT **")
+    printQueue(queue4)
+    println(queue4.foldLeft(0)((a,b) => a+b))
   }
 
   def printQueue(q: Queue[Int]): Unit = {
