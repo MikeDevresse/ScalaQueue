@@ -1,4 +1,11 @@
-# ScalaQueu
+# ScalaQueue
+
+## Introduction
+Ce projet correspond à un TP donné en Master informatique. Le but est de créer une liste chaînée auquel on aurait accès au dernier élément (celui que l'on a inséré en premier dans la liste) avec un temps constant (O(1)). Ce type de liste est donc appelée une queue et permet un accès FIFO (First in, last out).
+
+Le temps d'accès au premier élément doit aussi être en temps constant.
+
+Notre solution consiste à utiliser deux listes (in et out), in contient les éléments ajoutés au fil du temps. Tant que l'on ne retire pas d'élément, out reste vide. Dès que l'on veut retirer un élément, si out est vide, out deviens in en inversé et in devient alors vide, sinon on retire un élément de out.
 
 ## Travail à réaliser
 1. Implantez les méthodes de la classe Queue telles que listées ci-dessous.
@@ -28,3 +35,16 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
     def isEmpty:Boolean = in.isEmpty && out.isEmpty
 }
 ```
+
+## 1. Implantez les méthodes de la classe Queue telles que listées ci-dessus.
+Pour cette première étape il fallait donc implantez les méthodes enqueue, dequeue et headOption.
+#### Enqueue
+Il fallait simplement ajouté notre élément x à la fin de notre list in.
+#### Dequeue
+ * Si out est vide : On inverse la liste in ou on récupère ensuite la tête et le reste de la liste, puis on retourne la tête ainsi qu'une nouvelle queue ou in vaut Nil et out le reste de la liste.
+ * Sinon : on renvoie la tête de la liste out et on renvoie une nouvelle queue avec in étant notre liste in courante et out le reste de la liste de out sans la tête qui a été retiré.
+#### headOption
+Retourne
+* Option.empty si les deux listes sont vides
+* le dernier élément de out si in est vide
+* la tête de in sinon
