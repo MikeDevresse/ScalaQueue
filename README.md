@@ -66,3 +66,6 @@ Pour cette méthode j'ai utilisé les méthodes foldLeft et foldRight de la clas
 
 ## 7. La méthode dequeue est partielle. Corrigez-la.
 On retourne un Option[T] au lieu d'un [T] ce qui nous permet aussi de traité le cas ou la queue est vide
+
+## 8. Ré-implantez isEmpty avec match.
+On effectue un match sur les deux listes, si les deux valent Nil alors on retourne true, sinon dans tous les autres cas on renvoie false

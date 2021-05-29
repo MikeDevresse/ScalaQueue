@@ -45,7 +45,10 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
   def toList: List[T] = in ::: out.reverse
 
   /** Vrai si la liste est vide. */
-  def isEmpty:Boolean = in.isEmpty && out.isEmpty
+  def isEmpty:Boolean = (in, out) match {
+    case (Nil, Nil) => true
+    case _ => false
+  }
 
   /** Retourne la longueur de in et out */
   def length:Int = in.length + out.length
