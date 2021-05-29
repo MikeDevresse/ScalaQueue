@@ -6,7 +6,7 @@ object Test {
     printQueue(queue1)
 
     println("\n** TEST DEQUEUE VIDE")
-    val dequeue1 = queue1.dequeue()
+    val dequeue1 = queue1.dequeue
     println("Dequeue: " + dequeue1._1)
     printQueue(dequeue1._2)
 
@@ -23,7 +23,7 @@ object Test {
     printQueue(queue4)
 
     println("\n** QUEUE5")
-    val dequeue5 = queue4.dequeue()
+    val dequeue5 = queue4.dequeue
     println("Dequeue: " + dequeue5._1)
     printQueue(dequeue5._2)
 
@@ -49,8 +49,8 @@ object Test {
       return
     }
 
-    println("Tete: " + q.headOption())
-    println("Queue: " + q.rearOption())
+    println("Tete: " + q.headOption)
+    println("Queue: " + q.rearOption)
     println("Taille: " + q.length)
     println("Contenu: " + q)
     println("En list: " + q.toList)

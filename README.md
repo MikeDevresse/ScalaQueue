@@ -40,29 +40,62 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
 Pour cette première étape il fallait donc implantez les méthodes enqueue, dequeue et headOption.
 #### Enqueue
 Il fallait simplement ajouté notre élément x à la fin de notre list in.
+```Scala
+val queue1 = Queue[Int](Nil, Nil) 
+val queue2 = queue1.enqueue(1) // Queue(List(1),List())
+val queue3 = queue2.enqueue(2) // Queue(List(2,1),List())
+```
 #### Dequeue
  * Si out est vide : On inverse la liste in ou on récupère ensuite la tête et le reste de la liste, puis on retourne la tête ainsi qu'une nouvelle queue ou in vaut Nil et out le reste de la liste.
  * Sinon : on renvoie la tête de la liste out et on renvoie une nouvelle queue avec in étant notre liste in courante et out le reste de la liste de out sans la tête qui a été retiré.
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), Nil) 
+val queue2 = queue1.dequeue // (4,Queue(Nil,List(5,3,2))
+```
 #### headOption
 Retourne
 * Option.empty si les deux listes sont vides
 * le dernier élément de out si in est vide
 * la tête de in sinon
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), Nil) 
+val queue2 = queue1.headOption // 2
+```
 
 ## 2. Implantez une méthode length qui retourne la taille de le queue.
 Retourne la somme de la longueur de la liste in et la longueur de la liste out
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), List(7,6,4)) 
+val queue2 = queue1.length // 7
+```
 
 ## 3. Implantez une méthode rearOption qui retourne le dernier élément de la queue (celui inséré en premier) sans la modifier.
 Similaire à headOption, juste inversé
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), Nil) 
+val queue2 = queue1.rearOption // 2
+```
 
 ## 4. Implantez une méthode toList qui convertit la Queue en liste simplement chaînée.
 On retourne la liste in concaténée à la liste out mais inversé
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), List(7,6,4))
+val queue2 = queue1.toList // List(2,3,5,4,4,6,7)
+```
 
 ## 5. Implantez une méthode map sur Queue.
 On cré une nouvelle queue en passant in que l'on map grâce à la méthode map de la classe List et on fait pareil pour la liste out.
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), List(7,6,4))
+val queue2 = queue1.map(a => a*2) // List(4,6,10,8,8,12,14)
+```
 
 ## 6. Implantez une méthode foldLeft sur Queue.
 Pour cette méthode j'ai utilisé les méthodes foldLeft et foldRight de la classe List de Scala. On fait un foldLeft sur la liste in, que l'on passe en paramètre du foldRight de la liste out. On utilise un foldRight sur la liste out car la liste est inversé.
+```Scala
+val queue1 = Queue[Int](List(2,3,5,4), List(7,6,4))
+val queue2 = queue1.foldLeft(2)((a,b) => a+b) // 33
+```
 
 ## 7. La méthode dequeue est partielle. Corrigez-la.
 On retourne un Option[T] au lieu d'un [T] ce qui nous permet aussi de traité le cas ou la queue est vide
