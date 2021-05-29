@@ -30,6 +30,7 @@ object Test {
     }
 
     println("Tete: " + q.headOption())
+    println("Taille: " + q.length)
     println("Contenu: " + q)
   }
 }

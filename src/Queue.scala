@@ -22,4 +22,6 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
 
   /** Vrai si la liste est vide. */
   def isEmpty:Boolean = in.isEmpty && out.isEmpty
+
+  def length:Int = in.length + out.length
 }

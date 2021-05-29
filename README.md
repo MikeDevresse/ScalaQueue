@@ -48,3 +48,6 @@ Retourne
 * Option.empty si les deux listes sont vides
 * le dernier élément de out si in est vide
 * la tête de in sinon
+
+## 2. Implantez une méthode length qui retourne la taille de le queue.
+Retourne la somme de la longueur de la liste in et la longueur de la liste out
