@@ -20,8 +20,16 @@ case class Queue[T](in:List[T] = Nil, out:List[T] = Nil) {
     Option(in.head)
   }
 
+  /** Retourne le dernier élément de la queue */
+  def rearOption(): Option[T] = {
+    if(isEmpty) Option.empty
+    if(out.nonEmpty) return Option(out.head)
+    Option(in.last)
+  }
+
   /** Vrai si la liste est vide. */
   def isEmpty:Boolean = in.isEmpty && out.isEmpty
 
+  /** Retourne la longueur de in et out */
   def length:Int = in.length + out.length
 }

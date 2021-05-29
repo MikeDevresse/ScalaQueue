@@ -51,3 +51,6 @@ Retourne
 
 ## 2. Implantez une méthode length qui retourne la taille de le queue.
 Retourne la somme de la longueur de la liste in et la longueur de la liste out
+
+## 3. Implantez une méthode rearOption qui retourne le dernier élément de la queue (celui inséré en premier) sans la modifier.
+Similaire à headOption, juste inversé
